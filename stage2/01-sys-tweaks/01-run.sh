@@ -36,21 +36,9 @@ systemctl enable resize2fs_once
 EOF
 fi
 
-on_chroot <<EOF
-for GRP in input spi i2c gpio; do
-	groupadd -f -r "\$GRP"
-done
-for GRP in adm dialout cdrom audio users sudo video games plugdev input gpio spi i2c netdev; do
-  adduser $FIRST_USER_NAME \$GRP
-done
-EOF
-
 on_chroot << EOF
 setupcon --force --save-only -v
 EOF
 
-on_chroot << EOF
-usermod --pass='*' root
-EOF
 
 rm -f "${ROOTFS_DIR}/etc/ssh/"ssh_host_*_key*
