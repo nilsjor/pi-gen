@@ -1,0 +1,4 @@
+wpasupplicant
+firmware-brcm80211
+rsync
+cryptsetup
