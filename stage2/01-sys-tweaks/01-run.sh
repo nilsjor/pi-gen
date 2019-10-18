@@ -5,7 +5,5 @@ systemctl disable hwclock.sh
 systemctl enable ssh
 EOF
 
-mkdir "${ROOTFS_DIR}/root/.ssh/"
-cp /home/owner/.ssh/id_rsa.pub "${ROOTFS_DIR}/root/.ssh/authorized_keys"
-
-cp /home/owner/backup.sh "${ROOTFS_DIR}/root/."
+install -v -d					"${ROOTFS_DIR}/root/.ssh"
+install -v -m 600 /home/owner/.ssh/id_rsa.pub	"${ROOTFS_DIR}/root/.ssh/authorized_keys"

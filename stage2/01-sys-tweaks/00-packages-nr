@@ -1,5 +1,3 @@
 ssh
 ca-certificates
 fake-hwclock
-rsync
-cryptsetup
