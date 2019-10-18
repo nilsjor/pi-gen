@@ -1,5 +1,4 @@
 ssh
-python-rpi.gpio
 ca-certificates
 fake-hwclock
 rsync
